@@ -4,14 +4,16 @@
   "description": "Weather Forecast",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack",
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "postinstall": "npm run build",
+    "prod": "node server.js",
     "test": "mocha --compilers js:babel-core/register --compilers jsx:babel-core/register --require ./mocha.config.js 'components/**/*[Ss]pec.js'",
     "watch": "npm run test -- --watch"
   },
   "author": "Richard Bell",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "babel-cli": "^6.11.4",
     "babel-core": "~6.26.0",
     "babel-loader": "^6.2.5",
@@ -26,16 +28,16 @@
     "dirty-chai": "^2.0.1",
     "enzyme": "^2.9.1",
     "enzyme-adapter-react-16": "^1.0.2",
+    "express": "^4.16.2",
     "html-webpack-plugin": "^2.30.1",
     "jsdom": "^11.3.0",
     "mocha": "^4.0.1",
     "react": "^16.0.0",
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.0.0",
+    "sinon-chai": "^2.14.0",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.3"
-  },
-  "dependencies": {
-    "sinon-chai": "^2.14.0"
+    "webpack-dev-server": "^2.9.3",
+    "webpack-merge": "^4.1.0"
   }
 }
