@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js && cp style.css build/",
     "postinstall": "npm run build",
     "prod": "node server.js",
     "test": "mocha --compilers js:babel-core/register --compilers jsx:babel-core/register --require ./mocha.config.js 'components/**/*[Ss]pec.js'",
