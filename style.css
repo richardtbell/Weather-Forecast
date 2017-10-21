@@ -1,0 +1,70 @@
+body {
+  font-family: "Open Sans";
+}
+
+h1 {
+  text-align: center;
+}
+
+.weather-type {
+  text-transform: capitalize;
+}
+
+ul {
+  text-align: center;
+}
+
+ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #dadada;
+  min-width: 10vw;
+}
+
+ul li:last-child {
+  border-right: 1px solid #dadada;
+}
+
+.day {
+  margin: 0;
+}
+
+.sun {
+  background-color: #eceff1
+}
+
+.mon {
+  background-color: #fffde7;
+}
+
+.tue {
+  background-color: #efebe9
+}
+
+.wed {
+  background-color: #fbe9e7;
+}
+
+.thu {
+  background-color: #fff8e1
+}
+
+.fri {
+  background-color: #f1f8e9
+}
+
+.sat {
+  background-color: #e1f5fe
+}
+
+
+.time {
+  margin: 0;
+}
+
+.weather-type {
+  font-size: 10px;
+}
