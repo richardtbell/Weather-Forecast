@@ -36,6 +36,12 @@ describe('ForecastRow', () => {
           deg: 117.004,
           speed: 2.91
         }
+      },
+      units: {
+        conversion: function(kelvin) {
+          return kelvin
+        },
+        symbol: '°C'
       }
     }
     forecastRow = React.createElement(ForecastRow, props);

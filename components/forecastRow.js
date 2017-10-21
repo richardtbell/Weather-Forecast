@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function getDay(datetime) {
   const date = new Date(datetime * 1000)
@@ -17,7 +18,6 @@ function getTime (datetime) {
 
 class ForecastRow extends React.Component{
 
-
   render() {
     const datetime = this.props.item.dt;
     return (
@@ -28,11 +28,22 @@ class ForecastRow extends React.Component{
           src={'http://openweathermap.org/img/w/' + this.props.item.weather[0].icon + '.png'}
           alt={this.props.item.weather[0].description}/>
         <div className='weather-type'>{this.props.item.weather[0].description}</div>
-        <div className='temp'>{Math.round(this.props.item.main.temp) + '°C'}</div>
+        <div className='temp'>{Math.round(this.props.units.conversion(this.props.item.main.temp)) + this.props.units.symbol}</div>
       </li>
 
     )
   }
 }
+
+ForecastRow.propTypes = {
+  units: PropTypes.object
+};
+
+ForecastRow.defaultProps = {
+  units: {
+    symbol: '',
+    conversion: function() {},
+   }
+};
 
 export {ForecastRow, getDay, getTime}

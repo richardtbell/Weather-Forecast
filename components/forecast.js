@@ -9,7 +9,7 @@ class Forecast extends React.Component{
         <h1>Weather forecast for {this.props.city.name}</h1>
         <ul>
           { this.props.list.map(forecastRow => {
-            return <ForecastRow key={forecastRow.dt} item={forecastRow} />
+            return <ForecastRow key={forecastRow.dt} item={forecastRow} units={this.props.units} />
           }) }
         </ul>
 
@@ -21,12 +21,17 @@ class Forecast extends React.Component{
 
 Forecast.propTypes = {
   city: PropTypes.object,
-  list: PropTypes.array
+  list: PropTypes.array,
+  units: PropTypes.object
 };
 
 Forecast.defaultProps = {
   city: { name: ''},
-  list: []
+  list: [],
+  units: {
+    symbol: '',
+    conversion: function() {},
+   }
 };
 
 export {Forecast}

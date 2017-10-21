@@ -68,3 +68,9 @@ ul li:last-child {
 .weather-type {
   font-size: 10px;
 }
+
+.unit-selector {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
